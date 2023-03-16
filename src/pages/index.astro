@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Card } from '../components/Card';
+import { projects } from '../data/projects';
+
+---
+
+<Layout title="12 Fast Projects">
+  <div class="font-sans">
+    <div class="container mx-auto px-4">
+      <header class="text-center my-8">
+        <h1 class="text-5xl font-medium text-red-600">Welcome to 12 Fast projects!</h1> 
+      </header>
+      <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {Array.from({ length: 12 }).map((_, index) => (
+          <a  href={`#project-${index + 1}`} class="block bg-white p-4 rounded-lg shadow-lg">
+            <img src={`https://via.placeholder.com/150?text=Image+${index + 1}`} alt={`Project ${index + 1}`} class="w-full h-32 object-cover rounded-lg mb-4" />
+            <h2 class="text-lg font-semibold mb-2 text-center">Project {index + 1}</h2>
+            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor ex in odio semper, sit amet pellentesque odio bibendum.</p>
+          </a>
+        ))}
+			{projects.map((projects,index) => (
+			<Card client:load 
+			thumbnail={projects.thumbnail} 
+			projectTitle={projects.projectTitle}
+			projectDescription={projects.projectDescription} 
+			route={projects.route}
+			alt={}/>))}
+      </main>
+    </div>
+  </div>
+</Layout>
