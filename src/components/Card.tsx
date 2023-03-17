@@ -3,7 +3,7 @@ import { Props } from "astro";
 
 interface Card {
   thumbnail: string;
-  alt:string;
+  alt: string;
   projectTitle: string;
   projectDescription: string;
   route: string;
@@ -13,7 +13,7 @@ export const Card: Component<Card> = (props) => {
   return (
     <>
       <a
-        href={`${props.route}`}
+        href={`./${props.route}`}
         class='
         block
         bg-white
@@ -29,6 +29,7 @@ export const Card: Component<Card> = (props) => {
         <p class='text-gray-600'>{props.projectDescription}</p>
 
         <div>{props.thumbnail}</div>
+        <img src={props.thumbnail} alt={props.alt}></img>
       </a>
     </>
   );
