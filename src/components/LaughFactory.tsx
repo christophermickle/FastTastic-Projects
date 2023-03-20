@@ -10,7 +10,7 @@ type Joke = {
 };
 
 async function fetchJoke(): Promise<Joke> {
-  const key = 'dyWy35FcoOapeSRrS6pm3A == y5ew49nBU4tk1rJN';
+  const key = 'secret';
   const response = await fetch("https://api.api-ninjas.com/v1/jokes?limit=1", {
     headers: {
       "Content-Type": "application/json",
