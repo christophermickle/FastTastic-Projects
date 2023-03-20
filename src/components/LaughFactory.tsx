@@ -1,26 +1,17 @@
-import {
-  createSignal,
-  createResource,
-  Component,
-} from "solid-js";
-
+import { createSignal, createResource, Component } from "solid-js";
 
 type Joke = {
-  value: string;
+  joke: string;
 };
 
 async function fetchJoke(): Promise<Joke> {
-  const key = 'dyWy35FcoOapeSRrS6pm3A == y5ew49nBU4tk1rJN';
-  const response = await fetch("https://api.api-ninjas.com/v1/jokes?limit=1", {
+  const response = await fetch("https://icanhazdadjoke.com/", {
     headers: {
-      "Content-Type": "application/json",
       Accept: "application/json",
-      "x-Api-Key": key,
     },
   });
 
-  const data = await response.json();
-  return { value: data[0].joke };
+  return response.json();
 }
 
 type ButtonPos = {
@@ -77,7 +68,7 @@ export const LaughFactory: Component = () => {
           </p>
         )}
         <p class='text-lg text-white text-center'>
-          {jokeResource() && jokeResource().value}
+          {jokeResource() && jokeResource().joke}
         </p>
       </div>
     </div>
