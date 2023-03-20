@@ -4,7 +4,7 @@ import {
   createResource,
   Component,
 } from "solid-js";
-import config from "../config/LAUGH_FACTORY_CONFIG.js"
+import config from "../config/LAUGH_FACTORY_CONFIG";
 import { JSX } from "solid-js/jsx-runtime";
 
 type Joke = {
