@@ -72,5 +72,6 @@ export const LaughFactory: Component = () => {
         </p>
       </div>
     </div>
+    
   );
 };
