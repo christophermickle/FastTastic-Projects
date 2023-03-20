@@ -3,14 +3,14 @@ import {
   createResource,
   Component,
 } from "solid-js";
-import config from "../config/LAUGH_FACTORY_CONFIG";
+
 
 type Joke = {
   value: string;
 };
 
 async function fetchJoke(): Promise<Joke> {
-  const key = config.LAUGH_FACTORY_KEY 
+  const key = 'dyWy35FcoOapeSRrS6pm3A == y5ew49nBU4tk1rJN';
   const response = await fetch("https://api.api-ninjas.com/v1/jokes?limit=1", {
     headers: {
       "Content-Type": "application/json",
