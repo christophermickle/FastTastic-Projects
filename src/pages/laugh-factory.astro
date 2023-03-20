@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { contentDescription } from '../data/projects';
+import { LaughFactory } from '../components/LaughFactory';
+---
+<Layout title="Laugh Factory"
+contentDescription={contentDescription[0]}
+>
+<LaughFactory client:visible/>
+
+</Layout>

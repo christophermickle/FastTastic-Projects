@@ -121,7 +121,8 @@ export const projects = [
   },
 ];
 
+export const projectTitle = projects.map((item) => item.projectTitle);
 
-export const projectTitle= projects.map(item=>item.projectTitle)
-
-export const contentDescription = projects.map(item=>item.contentDescription)
+export const contentDescription = projects.map(
+  (item) => item.contentDescription
+);

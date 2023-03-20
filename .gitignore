@@ -4,6 +4,10 @@ dist/
 # generated types
 .astro/
 
+# local config files 
+src/config/*
+src/config/**/*
+src/config 
 # dependencies
 node_modules/
 
