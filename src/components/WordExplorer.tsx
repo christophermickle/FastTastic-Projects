@@ -75,7 +75,7 @@ const WordExplorer = () => {
             : "border-gray-300 bg-white"
         }`}
       >
-        <button
+        <button name="darkModeToggle" aria-hidden="true"
           class={`absolute top-4 right-4 p-2 rounded-2xl text-slate-800 border-4 border-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2  hover:text-slate-200 hover:bg-slate-800 h-14 w-14 text-3xl text-center mx-auto ${
             darkMode()
               ? "text-black focus:ring-white"
@@ -103,10 +103,14 @@ const WordExplorer = () => {
             id='queryBox'
             value={queryWord()}
             onInput={handleChange}
+            name="search field"
+            aria-label="Input your search term here"
             placeholder='What word are you looking for?'
             class='px-10 py-6 text-lg border rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-[calc(60vw-5rem)] border-blue-800 text-center'
           />
           <button
+            name="submit" 
+            aria-label="Search for your word"
             type='submit'
             class='px-4 py-2 my-10 text-lg font-semibold text-white bg-indigo-500 rounded-md focus:outline-none focus:ring 2 focus:ring-offset-2 focus:ring-indigo-500'
           >
@@ -119,7 +123,7 @@ const WordExplorer = () => {
             <div class='flex flex-col items-center space-y-4 mx-14 px-8'>
               <h2 class='text-2xl font-semibold underline underline-offset-2 my-4'>{word.word}</h2>
               <p class='text-lg'>{word.phonetic}</p>
-              <ul class='list-disc list-inside list-none'>
+              <ul class='list-inside list-none'>
                 {word.meanings.map((meaning) => (
                   <li>
                     <p class='font-medium'>{meaning.partOfSpeech}</p>
