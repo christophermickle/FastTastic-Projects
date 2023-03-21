@@ -75,32 +75,34 @@ const WordExplorer = () => {
             : "border-gray-300 bg-white text-slate-800"
         }`}
       >
-        <a
-          href='./'
-          class={`absolute top-4 right-8 mr-14 p-2 rounded-2xl text-slate-800 border-4 border-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2  hover:text-slate-200 hover:bg-slate-800 h-14  text-3xl text-center mx-auto ${
-            darkMode()
-              ? "text-slate-200 focus:ring-slate-200 bg-slate-200"
-              : "text-slate-800 focus:ring-indigo-500"
-          }`}
-        >
-          Home
-        </a>
-        <button
-          name='darkModeToggle'
-          aria-hidden='true'
-          class={`absolute top-4 right-4 p-2 rounded-2xl text-slate-800 border-4 border-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2  hover:text-slate-200 hover:bg-slate-800 h-14 w-14 text-3xl text-center mx-auto ${
-            darkMode()
-              ? "text-slate-200 focus:ring-slate-200 bg-slate-200"
-              : "text-slate-800 focus:ring-indigo-500"
-          }`}
-          onClick={toggleDarkMode}
-        >
-          {darkMode() ? <FiSun /> : <FaRegularMoon />}
-        </button>
+        <nav class='flex justify-between mt-4 mx-3'>
+          <h1 class='text-4xl font-semibold  mb-8 '>Word Explorer</h1>
+          <div class='flex flex-row gap-4 '>
+            <a
+              href='./'
+              class={`rounded-2xl p-2 text-slate-800 border-4 border-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2  hover:text-slate-200 hover:bg-slate-800 h-14  text-3xl text-center mx-auto  ${
+                darkMode()
+                  ? "text-slate-200 focus:ring-slate-200 bg-slate-200"
+                  : "text-slate-800 focus:ring-indigo-500"
+              }`}
+            >
+              Home
+            </a>
 
-        <h1 class='text-4xl font-semibold text-center mt-14 mb-8 '>
-          Word Explorer
-        </h1>
+            <button
+              name='darkModeToggle'
+              aria-hidden='true'
+              class={`flex p-2 rounded-2xl text-slate-800 border-4 border-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2  hover:text-slate-200 hover:bg-slate-800 h-14 w-14 text-3xl text-center mx-auto stroke-current fill-yellow-600 ${
+                darkMode()
+                  ? "text-slate-200 focus:ring-slate-200 bg-slate-200"
+                  : "text-slate-800 focus:ring-indigo-500"
+              }`}
+              onClick={toggleDarkMode}
+            >
+              {darkMode() ? <FiSun /> : <FaRegularMoon />}
+            </button>
+          </div>
+        </nav>
         <form
           onSubmit={handleSubmit}
           class='flex flex-col items-center space-y-4'
@@ -133,8 +135,8 @@ const WordExplorer = () => {
         <section class='mb-10'>
           {wordData().map((word) => (
             <div class='flex flex-col items-center space-y-4 mx-14 px-8'>
-              <h2 class='text-2xl font-semibold underline underline-offset-2 my-4'>
-                {word.word}
+              <h2 class='text-2xl font-semibold  my-4'>
+                You searched for : " <span class="underline underline-offset-2">{word.word}</span> "
               </h2>
               <p class='text-lg'>{word.phonetic}</p>
               <ul class='list-inside list-none'>
@@ -145,7 +147,7 @@ const WordExplorer = () => {
                     </p>
                     <ul>
                       {meaning.definitions.map((definition, index) => (
-                        <li class="flex row text-center m-2">
+                        <li class='flex row text-center m-2'>
                           <p class='italic text-center mr-2'>
                             Example {index + 1} : {definition.example}
                           </p>
