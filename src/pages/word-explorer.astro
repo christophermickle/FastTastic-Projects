@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { contentDescription, projectTitle } from "../data/projects";
+import WordExplorer from "../components/WordExplorer";
+
+
+---
+<Layout title={projectTitle[2]}contentDescription={contentDescription[2]}>
+<WordExplorer client:visible/>
+</Layout>
+    
+    
+

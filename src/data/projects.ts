@@ -1,4 +1,13 @@
-export const projects = [
+export interface ProjectTypes {
+  thumbnail: string;
+  projectTitle: string;
+  projectDescription: string;
+  route: string;
+  alt: string;
+  contentDescription: string;
+}
+
+export const projects: ProjectTypes[] = [
   {
     thumbnail: "",
     projectTitle: "Laugh Factory",
