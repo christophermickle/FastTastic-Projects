@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Card } from '../components/Card';
 import { projects } from '../data/projects';
+// import { Whatever } from '../pages/whatever.astro';
 ---
 
 <Layout title="FastTastic Projects" contentDescription="A showcase of 12 fun, engaging, and unique projects built using the cutting-edge FAST stack (Firebase/Firestore, Astro, Solid.js, and TailwindCSS/TypeScript). Explore and learn from these exciting applications, perfect for developers looking to expand their skills.">
@@ -19,6 +20,7 @@ import { projects } from '../data/projects';
 			route={projects.route}
 			alt={projects.alt}/>))}
       </main>
+      <!-- <Whatever /> -->
     </div>
   </div>
 </Layout>
